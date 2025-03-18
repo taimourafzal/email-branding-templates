@@ -585,14 +585,20 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:32px; padding-right:50px; padding-bottom:9px; padding-left:50px;">                                                
                         
-                        <h1 style="color: ${EMAIL_TITLE_COLOR}; font-size: 20px; font-family: ${EMAIL_TITLE_FONT}; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px;">${TITLE}</h1>
+                        <h1 style="color: <#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#202020</#if>; font-size: 20px; 
+                                   font-family: <#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Helvetica</#if>; 
+                                   margin-top: 0px; 
+                                   margin-bottom: 0px;  
+                                   padding-bottom: 0px;">
+                            ${TITLE}
+                        </h1>
 
 <p><br>
 <br>
 
 <p>
   <font color="<#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>" 
-        style="font-family:<#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+        style="font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
     ${INVITEEMAILBODY}
   </font>
 </p>
@@ -615,7 +621,8 @@
     <tbody class="mcnButtonBlockOuter">
         <tr>
             <td style="padding-top:0; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top" align="center" class="mcnButtonBlockInner">
-                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important; border-radius: 3px;  background-color: <#if EMAIL_BUTTON_COLOR??>${EMAIL_BUTTON_COLOR}<#else>#03142D</#if>;">
+                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important; border-radius: 3px;  
+                              background-color: <#if EMAIL_BUTTON_COLOR??>${EMAIL_BUTTON_COLOR}<#else>#03142D</#if>;">
                     <tbody>
                         <tr>
                             
