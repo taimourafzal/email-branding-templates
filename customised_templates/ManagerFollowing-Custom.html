@@ -554,6 +554,15 @@
                         <![endif]-->
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
                             <tr>
+                                <td valign="top">
+                                    <#if LOGO_IMAGE_URL??>
+                                            <#if EMAIL_HEADER_COLOR ?? ><div style="height: auto; background-color: ${EMAIL_HEADER_COLOR}"> <img class="header-logo-image" style="max-width: 120px; max-height: 100px; padding: 16px 0 16px 20px;" src="${LOGO_IMAGE_URL}" alt="Footer Logo"> </div> </#if> 
+                                        <#else>
+                                            <#if EMAIL_HEADER_COLOR ??><div style="height: 59px; background-color: ${EMAIL_HEADER_COLOR}"></div> </#if> 
+                                    </#if>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td valign="top" id="templatePreheader"></td>
                             </tr>
                             <tr>
@@ -577,10 +586,19 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <h1><font color="#696969">${TITLE}</font></h1>
+                            <h1 style="color: <#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#696969</#if>; 
+                                   font-size: 20px; 
+                                   font-family: <#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Helvetica</#if>; 
+                                   margin-top: 0px; 
+                                   margin-bottom: 0px;  
+                                   padding-bottom: 0px;">
+                            ${TITLE}
+                        </h1>
 
-<p><br>
-<font color="#696969">${BODYTEXT}</font></p>
+<p><span style="color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+    ${BODYTEXT}
+</span></p>
 
                         </td>
                     </tr>
@@ -600,11 +618,23 @@
     <tbody class="mcnButtonBlockOuter">
         <tr>
             <td style="padding-top:0; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top" align="center" class="mcnButtonBlockInner">
-                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 3px;background-color: #03142D;">
+                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 3px;background-color:<#if EMAIL_BUTTON_COLOR??>${EMAIL_BUTTON_COLOR}<#else>#03142D</#if>;">
                     <tbody>
                         <tr>
-                            <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial; font-size: 16px; padding: 18px;">
-                                <a class="mcnButton " title="${BUTTONTEXT}" href="${LINK}" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">${BUTTONTEXT}</a>
+                            <td align="center" valign="middle" class="mcnButtonContent" 
+                                style="font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;  
+                                       font-size: 16px; padding: 15px;">
+                                                        
+                                <a class="mcnButton" title="${BUTTONTEXT}" href="${LINK}" target="_blank" 
+                                   style="font-weight: bold;
+                                          letter-spacing: normal;
+                                          line-height: 100%;
+                                          text-align: center;
+                                          text-decoration: none;
+                                          color: <#if BUTTON_TEXT_COLOR??>${BUTTON_TEXT_COLOR}<#else>#FFFFFF</#if>;">
+                                    ${BUTTONTEXT}
+                                </a>
+                                
                             </td>
                         </tr>
                     </tbody>
@@ -624,16 +654,13 @@
 				<!--[if mso]>
 				<td valign="top" width="600" style="width:600px;">
 				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-                        
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                        
-                            <div style="text-align: center;"><span style="font-size:12px"><span style="color:#696969"><span style="font-family:verdana,geneva,sans-serif">Powered by Appical | support@appical.net</span></span></span></div>
-
-                        </td>
-                    </tr>
-                </tbody></table>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody>
+                        <tr>
+                            <td valign="middle" style="padding: 5px 2px; text-align: center; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #696969;"> <span>Powered by</span> <span class="logo_container" style="padding: 0 2px; vertical-align: middle;"> <#if IMAGE_FOOTER_LOGO_URL ??>   <img style="max-width: 60px; height: auto; display: inline-block; vertical-align: middle;" src="${IMAGE_FOOTER_LOGO_URL}" alt="Footer Logo"> <#else>Appical </#if> </span> <span style="padding: 0 2px;">|</span> <span>support@appical.com</span> </td>
+                        </tr>
+                    </tbody>
+                </table>
 				<!--[if mso]>
 				</td>
 				<![endif]-->
