@@ -582,9 +582,16 @@
                     <tbody class="email-body">
                         <tr>
                             <td valign="top" class="mcnTextContent" style="padding-top:32px; padding-right:50px; padding-bottom:9px; padding-left:50px;">
-                                <h1 style="color: ${EMAIL_TITLE_COLOR}; font-size: 20px; font-family: ${EMAIL_TITLE_FONT}; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px;">Hi there,</h1>
-                                <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">
-                                    Your new hire ${USERNAME} has completed ${COURSE} with a score of ${SCORE}. Click <a href="${SINREPLINK}" target="_blank">here</a> to check out their answers & feedback
+                                <h1 style="color: <#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#696969</#if>; 
+                                   font-size: 20px; 
+                                   font-family: <#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Helvetica</#if>; 
+                                   margin-top: 0px; 
+                                   margin-bottom: 0px; 
+                                   padding-bottom: 0px;">Hi there,</h1>
+                                <p style="margin-bottom: 20px; 
+                                        color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                        font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+                                    Your new hire ${USERNAME} has completed ${COURSE} with a score of ${SCORE}. Click <a href="${SINREPLINK}" target="_blank">here</a> to check out their answers & feedback
                                 </p>
                             </td>
                         </tr>
@@ -642,7 +649,11 @@
                     <tr>
                         <td valign="top" class="mcnTextContent" style="padding-top:0px; padding-right:50px; padding-bottom:9px; padding-left:50px;">
 
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">For more information please contact your AppicalNow Administrator</p>
+                            <p style="margin-bottom: 20px; 
+                                    color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                    font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+                                For more information please contact your AppicalNow Administrator
+                            </p>
 
                         </td>
                     </tr>
