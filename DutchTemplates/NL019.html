@@ -582,9 +582,18 @@
                 <tbody class="email-body">
                     <tr>
                         <td valign="top" class="mcnTextContent" style="padding-top:32px; padding-right:50px; padding-bottom:9px; padding-left:50px;">
-                            <h1 style="color: ${EMAIL_TITLE_COLOR}; font-size: 20px; font-family: ${EMAIL_TITLE_FONT}; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px;">Hi ${FNAME},</h1>
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Hierbij een overzicht van alle antwoorden op de Essay- en Photo Essay-pagina's die de afgelopen tijd door gebruikers in jouw organisatie zijn beantwoord.</p> <br>
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Je vindt de antwoorden in het PDF-bestand in de bijlage van deze e-mail.</p> <br>
+                            <h1 style="color: <#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#696969</#if>; 
+                                   font-size: 20px; 
+                                   font-family: <#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Helvetica</#if>; 
+                                   margin-top: 0px; 
+                                   margin-bottom: 0px;  
+                                   padding-bottom: 0px;">Hi ${FNAME},</h1>
+                            <p style="margin-bottom: 20px; 
+                                    color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                    font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">Hierbij een overzicht van alle antwoorden op de Essay- en Photo Essay-pagina's die de afgelopen tijd door gebruikers in jouw organisatie zijn beantwoord.</p> <br>
+                            <p style="margin-bottom: 20px; 
+                                    color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                    font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">Je vindt de antwoorden in het PDF-bestand in de bijlage van deze e-mail.</p>
                         
                         </td>
                     </tr>
