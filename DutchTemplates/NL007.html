@@ -587,8 +587,15 @@
                     <tbody class="email-body">
                         <tr>
                             <td valign="top" class="mcnTextContent" style="padding-top:32px; padding-right:50px; padding-bottom:9px; padding-left:50px;">
-                                <h1 style="color: ${EMAIL_TITLE_COLOR}; font-size: 20px; font-family: ${EMAIL_TITLE_FONT}; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px;">Hallo ${FNAME}, er is nieuwe content beschikbaar.</h1>
-                                <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Nieuwe content is aan je account toegevoegd: ${COURSE}. Start direct via de onderstaande knop.</p>
+                                <h1 style="color: <#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#696969</#if>; 
+																	font-size: 20px; 
+																	font-family: <#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Helvetica</#if>; 
+																	margin-top: 0px; 
+																	margin-bottom: 0px;  
+																	padding-bottom: 0px;">Hallo ${FNAME}, er is nieuwe content beschikbaar.</h1>
+															 <p style="margin-bottom: 20px; 
+																			 color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+																			 font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">Nieuwe content is aan je account toegevoegd: ${COURSE}. Start direct via de onderstaande knop.</p>
 
                             </td>
                         </tr>
@@ -622,14 +629,14 @@
                                        font-size: 16px; padding: 15px;">
                                                         
 
-                                <a class="mcnButton" title="Get started now" href="${APPICALNOW_LINK}" target="_blank" 
+                                <a class="mcnButton" title="Start" href="${APPICALNOW_LINK}" target="_blank" 
                                    style="font-weight: bold;
                                           letter-spacing: normal;
                                           line-height: 100%;
                                           text-align: center;
                                           text-decoration: none;
                                           color: <#if BUTTON_TEXT_COLOR??>${BUTTON_TEXT_COLOR}<#else>#FFFFFF</#if>;">
-                                    Get started now
+                                    Start
                                 </a>
                                 
                             </td>
