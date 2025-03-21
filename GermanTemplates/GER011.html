@@ -588,9 +588,30 @@
                 <tbody class="email-body">
                     <tr>
                         <td valign="top" class="mcnTextContent" style="padding-top:32px; padding-right:50px; padding-bottom:9px; padding-left:50px;">
-                            <h1 style="color: ${EMAIL_TITLE_COLOR}; font-size: 20px; font-family: ${EMAIL_TITLE_FONT}; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px;">Hallo ${FNAME}, morgen ist dein erster Arbeitstag bei ${COMPANY}</h1>
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Bist du bereit für dein neues Abenteuer? Dein Outfit liegt bereit und du kennst den Weg zu Arbeit? Wir freuen uns, dich als Mitglied unseres Unternehmens begrüßen zu dürfen und können es kaum erwarten, dich allen Mitarbeitern von ${COMPANY} vorzustellen.</p>
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Viel Erfolg und bis morgen!</p>
+
+                            
+                            
+                        <h1>
+                            <span style="
+                                color:<#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#696969</#if>;
+                                font-family:<#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Arial</#if>;
+                            ">
+                                Hallo ${FNAME}, morgen ist dein erster Arbeitstag bei ${COMPANY}
+                            </span>
+                        </h1>
+
+                        <p style="margin-bottom: 20px; 
+                                color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+                            Bist du bereit für dein neues Abenteuer? Dein Outfit liegt bereit und du kennst den Weg zu Arbeit? Wir freuen uns, dich als Mitglied unseres Unternehmens begrüßen zu dürfen und können es kaum erwarten, dich allen Mitarbeitern von ${COMPANY} vorzustellen.
+                        </p>
+                            
+                        <p style="margin-bottom: 20px; 
+                                color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+                            Viel Erfolg und bis morgen!
+                        </p>                            
+                            
 
                         </td>
                     </tr>

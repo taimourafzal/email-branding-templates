@@ -583,9 +583,30 @@
                 <tbody class="email-body">
                     <tr>
                         <td valign="top" class="mcnTextContent" style="padding-top:32px; padding-right:50px; padding-bottom:9px; padding-left:50px;">
-                            <h1 style="color: ${EMAIL_TITLE_COLOR}; font-size: 20px; font-family: ${EMAIL_TITLE_FONT}; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px;">Hallo ${FNAME},</h1>
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Hurra! Dein Import wurde abgeschlossen. Es wurden insgesamt ${WORDSIMPORTED} Wörter erfolgreich hinzugefügt. <#if ERROR?? && ERROR != false> Leider sind dabei folgende Fehler aufgetreten.. <br><br> ${ERRORNOTE}<br> Lade die angehängte Datei herunter, um zu prüfen, welche Wörter nicht importiert wurden.</#if><br><br></p>  
-                            <p style="margin-bottom: 20px; color: ${EMAIL_BODY_COLOR}; font-family: ${EMAIL_BODY_FONT};">Öffne AppicalNow über den nachstehenden Link.</p>
+
+                        <h1>
+                            <span style="
+                                color:<#if EMAIL_TITLE_COLOR??>${EMAIL_TITLE_COLOR}<#else>#696969</#if>;
+                                font-family:<#if EMAIL_TITLE_FONT??>${EMAIL_TITLE_FONT}<#else>Arial</#if>;
+                            ">
+                                Hallo ${FNAME},
+                            </span>
+                        </h1>
+
+                        <p style="margin-bottom: 20px; 
+                                color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+                            Hurra! Dein Import wurde abgeschlossen. Es wurden insgesamt ${WORDSIMPORTED} Wörter erfolgreich hinzugefügt. <#if ERROR?? && ERROR != false> Leider sind dabei folgende Fehler aufgetreten.. <br><br> ${ERRORNOTE}<br> Lade die angehängte Datei herunter, um zu prüfen, welche Wörter nicht importiert wurden.</#if><br><br>                            
+                        </p>
+
+                        <p style="margin-bottom: 20px; 
+                                color: <#if EMAIL_BODY_COLOR??>${EMAIL_BODY_COLOR}<#else>#696969</#if>; 
+                                font-family: <#if EMAIL_BODY_FONT??>${EMAIL_BODY_FONT}<#else>Arial</#if>;">
+                            Öffne AppicalNow über den nachstehenden Link.
+                        </p>
+
+                            
+                            
                         </td>
                     </tr>
                 </tbody>
